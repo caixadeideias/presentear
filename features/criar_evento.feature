@@ -11,7 +11,6 @@ Funcionalidade: Criar evento
     E eu preencho "Nome" com "Joãozinho"
     E eu escolho "festa de aniversário" no "Tipo" 
     E eu preencho "Data" com "2011-11-05"
-    
     Quando eu pressiono "Continuar"
     
     
