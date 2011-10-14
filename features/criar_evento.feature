@@ -7,11 +7,9 @@ Funcionalidade: Criar evento
   
   @wip
   Cenário: Amigo cria evento
-    Dado que estou na página inicial
-    E eu preencho "Nome" com "Joãozinho"
-    E eu escolho "festa de aniversário" no "Tipo" 
-    E eu preencho "Data" com "2011-11-05"
-    Quando eu pressiono "Continuar"
-    
-    
+    Dado que eu estou na página inicial
+    E eu preencho nome com "Joãozinho"
+    E eu seleciono "festa de aniversário" como tipo 
+    E eu preencho data com "2011-11-10"
+    Quando eu aperto "Criar"
     

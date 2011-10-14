@@ -1,15 +1,15 @@
-Dado /^que estou na página inicial$/ do
-  visit root_path
+Dado /^I select "([^"]*)" as the date$/ do |value|
+  select_date "event_limit_date", with: value
 end
 
-Dado /^eu preencho "([^"]*)" com "([^"]*)"$/ do |field, value|
-  fill_in field, with: value
+Dado /^eu preencho nome com "([^"]*)"$/ do |value|
+  When %{I fill in "event_gifted" with "#{value}"}
 end
 
-Dado /^eu escolho "([^"]*)" no "([^"]*)"$/ do |arg1, arg2|
-  pending # express the regexp above with the code you wish you had
+Dado /^eu seleciono "([^"]*)" como tipo$/ do |value|
+  When %{I select "#{value}" from "event_type"}
 end
 
-Quando /^eu pressiono "([^"]*)"$/ do |arg1|
-  pending # express the regexp above with the code you wish you had
+Dado /^eu preencho data com "([^"]*)"$/ do |value|
+  When %{I fill in "event_limit_date" with "#{value}"}
 end
