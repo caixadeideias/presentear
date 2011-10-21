@@ -43,23 +43,22 @@ describe EventsController do
   end
 
   describe "POST create" do
+    
       describe "with valid params" do
+    
         it "creates a new Event" do
-          expect {
-            post :create, :event => valid_attributes
-          }.to change(Event, :count).by(1)
+          Event.should_receive(:new).and_return(mock_model(Event).as_null_object)
+          post :create, :event => valid_attributes
         end
-  
-       # it "assigns a newly created event as @event" do
-       #   post :create, :event => valid_attributes
-       #   assigns(:event).should be_a(Event)
-       #   assigns(:event).should be_persisted
-       # end
-       #   
-       # it "redirects to the created event" do
-       #   post :create, :event => valid_attributes
-       #   response.should redirect_to(Event.last)
-       # end
+        
+        it "saves the event" do
+          event = mock_model(Event)
+          Event.stub(:new).and_return(event)
+          event.should_receive(:save).and_return(true)
+          
+          post :create, :event => valid_attributes
+        end
+
       end
   
       describe "with invalid params" do

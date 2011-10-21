@@ -11,13 +11,13 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111014172629) do
+ActiveRecord::Schema.define(:version => 20111021191804) do
 
   create_table "events", :force => true do |t|
     t.string   "gifted"
     t.date     "limit_date"
     t.string   "token"
-    t.string   "type"
+    t.string   "event_type"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

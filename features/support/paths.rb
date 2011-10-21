@@ -14,6 +14,7 @@ module NavigationHelpers
       '/'
     when /^página inicial$/
       root_path
+      
     when /^página do evento do Joãozinho$/
       "/joaozinho"
 

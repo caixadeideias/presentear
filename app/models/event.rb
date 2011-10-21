@@ -1,5 +1,5 @@
 class Event < ActiveRecord::Base
-  validates_presence_of :gifted, :type, :limit_date
+  validates_presence_of :gifted, :event_type, :limit_date
   
   before_save :generate_token
   
@@ -12,4 +12,5 @@ class Event < ActiveRecord::Base
       i += 1
     end while Event.exists?(token: self.token)
   end
+  
 end

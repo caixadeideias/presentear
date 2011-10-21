@@ -5,7 +5,7 @@ Funcionalidade: Enviar sugestão de presente
   Como um amigo do presenteado
   Eu quero enviar sugestões de presente para ele
   
-	@wip
+	
 	Cenário: Amigo acessa a página de sugestões de um evento
 		Dado que eu estou na página do evento do Joãozinho
 		Quando eu aperto "Enviar sugestão"

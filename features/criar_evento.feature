@@ -12,4 +12,6 @@ Funcionalidade: Criar evento
     E eu seleciono "festa de aniversário" como tipo 
     E eu preencho data com "2011-11-10"
     Quando eu aperto "Criar"
+		Então eu devo ver "Joãozinho"
+		E eu devo ver "sugestões"
     
