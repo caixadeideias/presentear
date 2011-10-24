@@ -1,4 +1,6 @@
 class Event < ActiveRecord::Base
+  has_many :ideas
+  
   validates_presence_of :gifted, :event_type, :limit_date
   
   before_save :generate_token

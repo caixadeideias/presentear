@@ -16,8 +16,9 @@ module NavigationHelpers
       root_path
       
     when /^página do evento do Joãozinho$/
+      Factory(:event, :gifted => "Joãozinho")
       "/joaozinho"
-
+      
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
     #

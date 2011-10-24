@@ -7,7 +7,7 @@ Dado /^eu preencho nome com "(.*)"$/ do |value|
 end
 
 Dado /^eu seleciono "(.*)" como tipo$/ do |value|
-  When %{I select "#{value}" from "event_type"}
+  When %{I select "#{value}" from "event_event_type"}
 end
 
 Dado /^eu preencho data com "(.*)"$/ do |value|

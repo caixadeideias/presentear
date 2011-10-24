@@ -27,7 +27,7 @@ describe Event do
   end
   
   it "requires type" do
-    subject.should have(1).error_on(:type)
+    subject.should have(1).error_on(:event_type)
   end
   
   it "requires limit date" do
