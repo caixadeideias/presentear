@@ -10,7 +10,6 @@ Funcionalidade: Enviar sugestão de presente
 		E eu clico "Enviar sugestão"
 		E eu preencho "Qual o presente sugerido?" com "Bola de futebol"
 		E eu preencho "Você possui o link de uma loja onde o produto se encontra?" com "http://www.submarino.com.br"
-		Então mostre-me a página
 		Quando eu aperto "Compartilhar sugestão"
 		Então eu devo ver "Bola de futebol"
 	

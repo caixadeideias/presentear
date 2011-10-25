@@ -4,8 +4,7 @@
 
 <% if @event.errors.any? %>
   <div id="error_explanation">
-    <h2><%= pluralize(@event.errors.count, "error") %> prohibited this event from being saved:</h2>
-
+    <h2>Oops! Por favor verifique:</h2>
     <ul>
     <% @event.errors.full_messages.each do |msg| %>
       <li><%= msg %></li>
@@ -16,7 +15,7 @@
 
   <div class="actions">
     Crie uma página para seus amigos colaborarem com idéias de presente para <%= f.text_field :gifted %>.
-    A sua <%= f.select :event_type, [['festa de aniversário']] %> irá ocorrer em <%= f.text_field :limit_date %>.
+   	Em <%= f.text_field :limit_date %> irá ocorrer <%= f.select :event_type, Event::EVENT_TYPE_OPTIONS %> dele(a).
     <%= f.submit "Criar" %>
   </div>
 <% end %>

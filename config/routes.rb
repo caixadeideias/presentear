@@ -7,5 +7,5 @@ Presentear::Application.routes.draw do
     resources :ideas, only: [:create]
   end
   
-  resources :events, only: [:new, :create] 
+  resources :events, only: [:new, :create], :path => "eventos"
 end

@@ -237,3 +237,13 @@
 
       full_messages:
         format: "%{attribute} %{message}"
+        
+    attributes:
+      event:
+        gifted: "Nome do presenteado"
+        limit_date: "Data do evento"
+        event_type: "Tipo de evento"
+      idea:
+        name: "Sugestão de presente"
+        link: "Link para a sugestão"
+      

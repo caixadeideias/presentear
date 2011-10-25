@@ -33,19 +33,24 @@ describe IdeasController do
         end
     end
     
+    context "not valid" do
+      before(:each) do
+        Idea.any_instance.stub(:save).and_return(false)
+      end
+      
+      it "should redirect to the related event page" do        
+        post :create, {:token => Factory(:event).token, :idea => {} }
+        response.should redirect_to show_event_path(event_token)
+      end
+      
+      it "should not save the empty idea" do        
+        expect { 
+          post :create, {:token => Factory(:event).token, :idea => {} } 
+        }.not_to change { Idea.count }
+      end
+      
+    end
+    
   end
 
 end
-
-
-
-# 
-# def create
-#   @post = Post.find(params[:post_id])
-#   @comment = @post.comments.build(params[:comment])
-#   flash[:alert] = 'Fail to receive the comment. Double check the fields' unless @comment.save
-#   
-#   respond_to do |format|
-#     format.html { redirect_to post_path(@post) }
-#     format.js
-#   end
