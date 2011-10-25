@@ -3,10 +3,9 @@ class IdeasController < ApplicationController
   end
 
   def create
-    @event = Event.find(params[:event_id])
+    @event = Event.find_by_token(params[:token])
     @idea = @event.ideas.build(params[:idea])
-    @idea.save
-    redirect_to show_event_path(@event.token)
+    redirect_to show_event_path(@event.token) if @idea.save
   end
 
 end

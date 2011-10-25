@@ -1,7 +1,5 @@
 require 'spec_helper'
 
-# ARRUMAR ROTAS...
-
 describe IdeasController do
   
   let(:fake_idea) { Factory(:idea) }
@@ -9,32 +7,31 @@ describe IdeasController do
 
   describe "POST create" do
     
-      before(:each) do
-        Idea.any_instance.stub(:save).and_return(true)
-      end
-    
-      it "should locate the related event" do
-        Event.should_receive(:find).with(event_token).and_return(mock().as_null_object)
+    context "is valid" do
+        before(:each) do
+          Idea.any_instance.stub(:save).and_return(true)
+        end
         
-        post :create, {:token => event_token, :idea => fake_idea.attributes }
-      end
-    
-      it "should add the idea to the event" do
-        object = mock().as_null_object
-        Event.stub(:find).and_return(object)   
-         
-        object.should_receive(:ideas).and_return(object)
-        object.should_receive(:build).and_return(object)
-      
-        post :create, {:token => event_token, :idea => fake_idea.attributes }
-      end
-    
-      it "should redirect to the related event page" do
-        response.should render_template show_event_path(fake_idea.event)
-        
-        post :create, {:token => event_token, :idea => fake_idea.attributes }
-      end
-      
+        it "should locate the related event by token" do
+          Event.should_receive(:find_by_token).with(event_token).and_return(mock().as_null_object)
+          post :create, {:token => event_token, :idea => fake_idea.attributes }
+        end
+
+        it "should add the idea to the event" do
+          object = mock().as_null_object
+          Event.stub(:find_by_token).and_return(object)   
+
+          object.should_receive(:ideas).and_return(object)
+          object.should_receive(:build).and_return(object)
+
+          post :create, {:token => event_token, :idea => fake_idea.attributes }
+        end
+
+        it "should redirect to the related event page" do        
+          post :create, {:token => event_token, :idea => fake_idea.attributes }
+          response.should redirect_to show_event_path(fake_idea.event.token)
+        end
+    end
     
   end
 

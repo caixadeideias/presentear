@@ -1,5 +1,5 @@
 <div style="display:none;">
-	<%= form_for [event, idea], :html => {:id => "suggestion-form"} do |f| %>
+	<%= form_for [event, idea], :url => event_ideas_path, :html => {:id => "suggestion-form"} do |f| %>
 		<h3>Adicionar uma sugestão</h3>
 		
 		<%= f.label :name, "Qual o presente sugerido?" %>
@@ -8,6 +8,6 @@
 		<%= f.label :link, "Você possui o link de uma loja onde o produto se encontra?" %>
 		<%= f.text_field :link %><br/>
 		
-		<input type="submit" value="Compartilhar sugestão" />
+		<%= f.submit "Compartilhar sugestão" %>
 	<% end %>
 </div>
