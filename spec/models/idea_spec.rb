@@ -2,6 +2,12 @@
 
 require 'spec_helper'
 
-describe Event do
-  
+describe Idea do
+
+  it "should not save an empty idea" do
+    expect {
+      Idea.create
+    }.not_to change { Idea.count}      
+  end
+    
 end

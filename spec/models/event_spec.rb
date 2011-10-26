@@ -33,4 +33,5 @@ describe Event do
   it "requires limit date" do
     subject.should have(1).error_on(:limit_date)
   end
+  
 end

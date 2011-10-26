@@ -12,5 +12,7 @@ Funcionalidade: Criar evento
     E eu preencho data com "2011-11-10"
     Quando eu aperto "Criar"
 		Então eu devo ver "Joãozinho"
-		E eu devo ver "idéias de presente para a festa de aniversário de Joãozinho"
+		E eu devo ver "idéias de presente para festa de aniversário de Joãozinho"
+		
+		
     
