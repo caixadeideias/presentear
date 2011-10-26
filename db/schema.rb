@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111024182043) do
+ActiveRecord::Schema.define(:version => 20111026182316) do
 
   create_table "events", :force => true do |t|
     t.string   "gifted"
