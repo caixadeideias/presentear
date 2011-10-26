@@ -2,6 +2,7 @@ class EventsController < ApplicationController
 
   def show
     @event = Event.find_by_token(params[:token])
+    render :template => "events/_expired" unless @event.active?
   end
 
   def new

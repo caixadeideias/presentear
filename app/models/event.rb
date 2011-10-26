@@ -5,9 +5,19 @@ class Event < ActiveRecord::Base
   
   validates_presence_of :gifted, :event_type, :limit_date
   
+  validates_with DateValidator, :fields => :limit_date
+  
   before_save :generate_token
   
   EVENT_TYPE_OPTIONS = ["uma festinha qualquer","festa de aniversário","amigo secreto","festa de casamento","festa de divórcio","despedida de solteiro"]
+  
+  # scope :active, where("limit_date >= ?", Date.current)
+  
+  def active?
+    limit_date >= Date.current 
+  end
+  
+  private
   
   def generate_token
     i = 0

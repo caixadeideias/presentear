@@ -7,13 +7,29 @@ describe EventsController do
   end
 
   describe "GET show" do
+    
+    let(:fake) { double(Event).as_null_object }
+    
     it "assigns and find an event by token" do
-      fake = double(Event)
       Event.should_receive(:find_by_token).with("joaozinho").and_return(fake)
-      
       get :show, token: "joaozinho"
       
       assigns(:event).should eq(fake)
+    end
+    
+    it "should only show active events" do
+      Event.stub(:find_by_token).and_return(fake)
+      fake.should_receive(:active?)
+      
+      get :show, token: "joaozinho"
+    end
+    
+    it "should show the expired template when event expired" do
+      Event.stub(:find_by_token).and_return(fake)
+      fake.stub(:active?).and_return false
+      
+      get :show, token: "joaozinho"
+      response.should render_template "events/_expired"
     end
 
   end

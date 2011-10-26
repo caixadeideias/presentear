@@ -30,8 +30,26 @@ describe Event do
     subject.should have(1).error_on(:event_type)
   end
   
-  it "requires limit date" do
-    subject.should have(1).error_on(:limit_date)
+  describe "limit date" do
+    it "requires limit date" do
+      subject.should have(1).error_on(:limit_date)
+    end
+    
+    it "must be in the future or today" do
+      event = Factory.build(:expired_event)
+      event.should have(1).error_on(:base)
+    end
   end
+  
+  it "should display if event is still active" do
+    event = Factory(:event)    
+    event.active?.should == true
+  end
+  
+  # it "should be able to filter only events that didn't occur yet" do
+  #   Factory(:event)    
+  #   Factory(:expired_event)
+  #   Event.active.count.should == 1 
+  # end
   
 end

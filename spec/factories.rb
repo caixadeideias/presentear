@@ -3,7 +3,11 @@
 Factory.define :event do |event|
   event.gifted "Joãozinho"
   event.event_type "festa de aniversário"
-  event.limit_date "2011-12-08"  
+  event.limit_date Date.current.iso8601 
+end
+
+Factory.define :expired_event, :parent => :event do |event|
+  event.limit_date "2008-10-10"  
 end
 
 Factory.define :idea do |idea|
