@@ -6,5 +6,5 @@ class IdeasController < ApplicationController
     @idea.save
     redirect_to show_event_path(@event.token) 
   end
-
+  
 end
