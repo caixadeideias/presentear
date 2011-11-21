@@ -15,3 +15,8 @@ $(document).ready(function() {
 	$("a#inline").fancybox();
 
 });
+
+
+$(function() {
+	
+});

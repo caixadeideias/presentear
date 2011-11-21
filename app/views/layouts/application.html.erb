@@ -16,25 +16,64 @@
 			<h1>Presentear</h1>
 	
 			<div id="about">
-				<p>Invited to a party and don’t know what to buy the party animal? We feel you.</p>
-				<p>Use Wrappp.it to collaborate about gift ideas with friends, family and colleagues. <strong>Chip in with others and find the perfect gift.</strong></p>
+				<p>Foi convidado para uma festa e não sabe o que dar de presente?</p>
+				<p>Utilize o <strong>presentear</strong> para receber ou fazer sugestões de presentes.</p>
+				<p>É <strong>gratuito</strong> e não precisa de cadastro.</p> 
 			</div>
 		</div>  <!-- //header -->
 	
-		<div id="gift">
-			<form>
-				<p>Crie uma página para colaborarem com idéias de presente para <input type="text" name="person" class="dashed" size="25" /></p>
-			
-				<p>A sua <select><option value="festa de aniversário">festa de aniversário</select> irá ocorrer em <input type="text" name="date" size="25" class="dashed" /></p>
+		<form class="gift_form">
+			<div id="gift">
+				<div class="field_container">
+					<input type="text" name="gift" placeholder="Nome do presentado" id="person_input" />
+				</div>
 				
-				<input type="submit" value="Continuar" class="continue_button" />
-			</form>
-		</div>  <!-- //search -->
+				<div class="field_container">
+					<input type="text" name="event_type" id="event_input" />
+					<!-- <select id="event_input" name="event_type">
+						<option value="festa de aniversário">festa de aniversário</option>
+						<option value="festa de casamento">festa de casamento</option>
+						<option value="despedida de solteiro">despedida de solteiro</option>
+					</select> -->
+				</div>
+				
+				<div class="field_container">
+					<input type="text" name="limit_date" placeholder="Data do evento" id="calendar_input" />
+				</div>
+					
+				<div class="clear"></div>
+			</div>  <!-- //gift -->
+			
+			<input type="submit" value="Continuar" id="submit_form" />
+			<div class="clear"></div>
+			
+		</form>
+		
+		<hr/>
+		
+		<div id="info_container">
+			<h2>Como funciona?</h2>
+
+			<div id="info">
+				<div id="left_info">
+					<span class="big_number">1</span>
+					<p>Preencha os campos acima com os dados da festa e clique em "Continuar".</p>
+				</div>
+			
+				<div id="right_info">
+					<span class="big_number">2</span>
+					<p>Compartilhe o endereço gerado com seus amigos e receba diversas sugestões para presentear!</p>
+				</div>
+			
+				<div class="clear"></div>
+			</div>
+		</div>
 		
 	</div> <!-- //wrapper -->
 	
 	<div id="footer-wrapper">
 		<div id="footer">
+			<%= link_to (image_tag "logo_caixa.png", :class => "logo_footer"), "http://www.caixadeideias.com.br", :target => "_blank" %>
 		</div>
 	</div>
 	
