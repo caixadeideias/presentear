@@ -1,21 +1,42 @@
-<h1>Presentear</h1>
-
-<div>
+<div class="gift_message">
 	<p>Colabore com idéias de presente para <%= @event.event_type %> de <%= @event.gifted %>, que irá ocorrer 
 	<%= show_dates_distance_with_today(@event.limit_date) %>.</p>
 </div>
 
-<a id="inline" href="#suggestion-form">Enviar sugestão</a>
+<div id="show_container">
+	
+	<div id="suggestions">
+		<h3>Sugestões de presente:</h3>
+ 
+		<% if @event.ideas.nil? %>
+			<p>Não existem sugestões cadastradas.<br/>Seja o primeiro!</p>
+		<% end %>
+		
+		<a id="inline" href="#suggestion-form">Adicione uma sugestão</a>
 
-<%= render "suggestion_form", :event => @event, :idea => Idea.new %>	
+		<%= render "suggestion_form", :event => @event, :idea => Idea.new %>
 
-<div id="suggestions">
-	<h3>Sugestões:</h3>
-
-	<% @event.ideas.each do |idea| %>
-	<div id="<%=dom_id(idea)%>">
-		Presente: <%= idea.name %><br/>
-		Link: <%= idea.link %><br/>
+		<% @event.ideas.each do |idea| %>
+		<div id="<%=dom_id(idea)%>" class="suggestion">
+			<img src="" />
+			<p><strong>Fulano de tal</strong> sugeriu:<br/><a href="<%= idea.link %>"><%= idea.name %></a></p>
+		</div>
+		<% end %>	
+		
 	</div>
-	<% end %>	
+	
+	<div id="share">
+		<h3>Compartilhe:</h3>
+		
+		<div id="social_networks">
+			<img src="" />
+			<img src="" />
+			<div class="clear"></div>
+		</div>
+		
+		<p>Ou compartilhe diretamente o seguinte link com seus amigos:</p>
+		<p><a href="#">http://presente.ar/fulano-de-tal</a></p>
+	</div>
+		
 </div>
+

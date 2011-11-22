@@ -1,0 +1,26 @@
+div#error_explanation {
+	background-color: #eadda3;
+	border-radius: 10px;
+	border: 1px solid #b6a256;
+	padding: 22px 0px;
+	width: 620px;
+	margin: 30px auto;
+}
+
+div#error_explanation h3 {
+	text-align: center;
+	color: #ac7d00;
+	font-weight: bold;
+}
+
+div#error_explanation ul {
+	margin: 10px auto 0px auto;
+	width: 500px;
+	list-style: none;
+}
+
+div#error_explanation ul li {
+	text-align: center;
+	color: #ac7d00;
+	line-height: 25px;
+}

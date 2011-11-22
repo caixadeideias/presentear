@@ -1,10 +1,8 @@
-<h1>Novo evento</h1>
-
-<%= form_for(@event) do |f| %>
+<%= form_for @event, :html_options => {:class => 'gift_form'} do |f| %>
 
 <% if @event.errors.any? %>
   <div id="error_explanation">
-    <h2>Oops! Por favor verifique:</h2>
+    <h3>Oops! Por favor verifique:</h2>
     <ul>
     <% @event.errors.full_messages.each do |msg| %>
       <li><%= msg %></li>
@@ -13,9 +11,43 @@
   </div>
 <% end %>
 
-  <div class="actions">
-    Crie uma página para seus amigos colaborarem com idéias de presente para <%= f.text_field :gifted %>.
-   	Em <%= f.text_field :limit_date %> irá ocorrer <%= f.select :event_type, Event::EVENT_TYPE_OPTIONS %> dele(a).
-    <%= f.submit "Criar" %>
-  </div>
+	<div id="gift">
+		<div class="field_container">
+			<%= f.text_field :gifted, :id => "person_input", :placeholder => "Nome do presenteado" %>
+		</div>
+		
+		<div class="field_container">
+			<%= f.text_field :event_type, :id => "event_input", :placeholder => "Tipo de evento" %>
+		</div>
+		
+		<div class="field_container">
+			<%= f.text_field :limit_date, :id => "calendar_input", :placeholder => "Data do evento" %>
+		</div>
+			
+		<div class="clear"></div>
+	</div>  <!-- //gift -->
+	
+	<%= f.submit "Continuar", :id => "submit_form" %>
+	<div class="clear"></div>
+	
 <% end %>
+
+<hr class="separator" />
+
+<div id="info_container">
+	<h2>Como funciona?</h2>
+
+	<div id="info">
+		<div id="left_info">
+			<span class="big_number">1</span>
+			<p>Preencha os campos acima com os dados da festa e clique em "Continuar".</p>
+		</div>
+	
+		<div id="right_info">
+			<span class="big_number">2</span>
+			<p>Compartilhe o endereço gerado com seus amigos e receba diversas sugestões para presentear!</p>
+		</div>
+	
+		<div class="clear"></div>
+	</div>
+</div>
