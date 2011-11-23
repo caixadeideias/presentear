@@ -1,42 +1,47 @@
-<div class="gift_message">
-	<p>Colabore com idéias de presente para <%= @event.event_type %> de <%= @event.gifted %>, que irá ocorrer 
-	<%= show_dates_distance_with_today(@event.limit_date) %>.</p>
+<div id="gift_message">
+	<p>Colabore com idéias de presente para <strong><%= @event.event_type %></strong> de <strong><%= @event.gifted %></strong>, que irá ocorrer <strong><%= show_dates_distance_with_today(@event.limit_date) %></strong>.</p>
 </div>
 
 <div id="show_container">
 	
 	<div id="suggestions">
-		<h3>Sugestões de presente:</h3>
+		<h2>Sugestões:</h2>
  
 		<% if @event.ideas.nil? %>
-			<p>Não existem sugestões cadastradas.<br/>Seja o primeiro!</p>
+		<p class="none_message">Não existem sugestões cadastradas.<br/>Seja o primeiro!</p>
 		<% end %>
 		
-		<a id="inline" href="#suggestion-form">Adicione uma sugestão</a>
+		<a id="add_suggestion" href="#suggestion-form">Adicione uma sugestão</a>
 
 		<%= render "suggestion_form", :event => @event, :idea => Idea.new %>
 
+
 		<% @event.ideas.each do |idea| %>
-		<div id="<%=dom_id(idea)%>" class="suggestion">
-			<img src="" />
-			<p><strong>Fulano de tal</strong> sugeriu:<br/><a href="<%= idea.link %>"><%= idea.name %></a></p>
+		<div id="<%=dom_id(idea)%>" class="suggestion_box">
+			<%= image_tag "avatar.jpg" %>
+			<p><strong>Fulano de tal</strong> sugeriu:<br/><%= link_to idea.name, idea.link, :target => "_blank" %></p>
+			<div class="clear"></div>
 		</div>
 		<% end %>	
 		
 	</div>
 	
 	<div id="share">
-		<h3>Compartilhe:</h3>
+		<h2>Compartilhe:</h2>
 		
 		<div id="social_networks">
-			<img src="" />
-			<img src="" />
-			<div class="clear"></div>
+				<!-- AddThis Button BEGIN -->
+				<div class="addthis_toolbox addthis_default_style ">
+					<a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+					<a class="addthis_button_tweet"></a>
+				</div>
+				<script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=xa-4ecd30fd6f6d6311"></script>
+				<!-- AddThis Button END -->
 		</div>
 		
-		<p>Ou compartilhe diretamente o seguinte link com seus amigos:</p>
-		<p><a href="#">http://presente.ar/fulano-de-tal</a></p>
+		<p>Ou compartilhe diretamente o seguinte link com seus amigos: <br/> <a href="#">http://presente.ar/fulano-de-tal</a></p>
 	</div>
-		
+	
+	<div class="clear"></div>	
 </div>
 

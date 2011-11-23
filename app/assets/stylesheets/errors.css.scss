@@ -1,7 +1,7 @@
+@import "mixins";
+
 div#error_explanation {
-	background-color: #eadda3;
-	border-radius: 10px;
-	border: 1px solid #b6a256;
+	@include rounded_yellow;
 	padding: 22px 0px;
 	width: 620px;
 	margin: 30px auto;

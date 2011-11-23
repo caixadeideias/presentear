@@ -1,3 +1,5 @@
+@import "mixins";
+
 * {
 	padding: 0px;
 	margin: 0px;
@@ -8,6 +10,11 @@ body {
 	font-family: Georgia;
 	font-size: 17px;
 	color: #666;
+}
+
+a, a:active, a:visited, a:hover {
+	text-decoration: none;
+	color: white;
 }
 
 h1, h2 {
@@ -27,7 +34,7 @@ h1 {
 h2 {
 	font-size: 40px;
 	color: #bd2120;	
-	text-shadow: 2px 2px 1px #ba5050;
+	text-shadow: 2px 2px 0px #ff9897;
 }
 
 div#wrapper {
@@ -58,6 +65,109 @@ div#gift {
 	line-height: 30px;
 	font-size: 18px;
 }
+
+a#add_suggestion {
+	display: block;
+	font-size: 18px;
+	padding: 19px 0px;
+	text-align: center;
+	border-radius: 10px;
+	border: 1px solid #ad1212;
+	margin: 25px auto;
+	background: #b31414 image-url('bg_submit_suggestion.jpg') repeat-x top center;
+}
+
+div.suggestion_box {
+	@include rounded_yellow;
+	padding: 15px 20px;
+	margin: 20px auto;
+	
+	img, p {
+		float: left;
+	}
+	
+	p {
+		width: 230px;
+		margin-left: 20px;
+		font-size: 16px;
+		line-height: 20px;
+	}
+	
+	a, a:active, a:visited {
+		color: #666;
+		border-bottom: 1px dashed #666;
+	}
+}
+
+div#share {
+	p {
+		line-height: 20px;
+		
+		br {
+			line-height: 30px;
+		}
+	}
+	
+	a, a:active, a:visited {
+		font-weight: bold;
+		color: #666;
+		border-bottom: 1px dashed #666;
+	}
+	
+	div#social_networks {
+		margin: 30px auto 10px auto;
+		
+		.addthis_toolbox
+		{
+			a, a:active, a:visited {
+				color: white;
+				border: 0px;
+			}		
+		}
+	}
+	
+	
+
+}
+
+div#gift_message {
+	@include rounded_yellow;	
+	padding: 27px 0px;
+	margin: 25px auto 45px auto;
+	
+	p {
+		width: 740px;
+		line-height: 35px;
+		text-align: center;
+		color: #b1870f;
+		font-size: 25px;
+		margin: 0px auto;
+	}
+}
+
+p.none_message {
+	text-align: center;
+	font-size: 18px;
+	margin: 20px auto;
+}
+
+div#show_container {	
+	h2 {
+		font-size: 35px;
+	}
+}
+
+div#suggestions, div#share {
+	float: left;
+	width: 360px;
+	padding: 0px 60px;
+}
+
+div#suggestions {
+	width: 356px;
+	border-right: 3px dashed white;
+}
+
 
 div#info_container {
 	margin: 30px auto 0px auto;

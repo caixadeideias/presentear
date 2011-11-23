@@ -12,11 +12,6 @@
 
 $(document).ready(function() {
 	
-	$("a#inline").fancybox();
+	$("a#add_suggestion").fancybox();
 
-});
-
-
-$(function() {
-	
 });
