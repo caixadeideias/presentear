@@ -1,3 +1,5 @@
+<%= content_for :title, "Presentear - Sugestões de presente para #{@event.event_type} de #{@event.gifted}"  %>
+
 <div id="gift_message">
 	<p>Colabore com idéias de presente para <strong><%= @event.event_type %></strong> de <strong><%= @event.gifted %></strong>, que irá ocorrer <strong><%= show_dates_distance_with_today(@event.limit_date) %></strong>.</p>
 </div>
@@ -18,7 +20,7 @@
 		<% @event.ideas.each do |idea| %>
 		<div id="<%=dom_id(idea)%>" class="suggestion_box">
 			<%= image_tag "avatar.jpg" %>
-			<p><strong>Fulano de tal</strong> sugeriu:<br/><%= link_to_if_present idea.link, idea.name, :target => "_blank" %></p>
+			<p><strong>Anônimo</strong> sugeriu:<br/><%= link_to_if_present idea.link, idea.name, :target => "_blank" %></p>
 			<div class="clear"></div>
 		</div>
 		<% end %>	

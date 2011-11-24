@@ -1,3 +1,5 @@
+<%= content_for :title, "Presentear" %>
+
 <%= form_for @event, :html_options => {:class => 'gift_form'} do |f| %>
 
 <% if @event.errors.any? %>

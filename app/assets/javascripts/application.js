@@ -13,5 +13,4 @@
 $(document).ready(function() {
 	
 	$("a#add_suggestion").fancybox();
-
 });
