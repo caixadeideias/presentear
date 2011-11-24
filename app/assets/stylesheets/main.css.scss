@@ -29,6 +29,11 @@ h1 {
 	color: #77a101;
 	text-shadow: 2px 2px 1px #cce190;
 	background: image-url("icon_gift.png") no-repeat 320px 22px;
+	
+	a, a:active, a:visited, a:hover {
+		text-decoration: none;
+		color: #77a101;
+	}
 }
 
 h2 {
@@ -67,8 +72,8 @@ div#gift {
 }
 
 a#add_suggestion {
+	@include red_button_text;
 	display: block;
-	font-size: 18px;
 	padding: 19px 0px;
 	text-align: center;
 	border-radius: 10px;
@@ -125,10 +130,8 @@ div#share {
 			}		
 		}
 	}
-	
-	
-
 }
+
 
 div#gift_message {
 	@include rounded_yellow;	

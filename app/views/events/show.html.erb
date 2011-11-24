@@ -7,11 +7,11 @@
 	<div id="suggestions">
 		<h2>Sugestões:</h2>
  
-		<% if @event.ideas.nil? %>
+		<% if !@event.ideas.present? %>
 		<p class="none_message">Não existem sugestões cadastradas.<br/>Seja o primeiro!</p>
 		<% end %>
 		
-		<a id="add_suggestion" href="#suggestion-form">Adicione uma sugestão</a>
+		<a id="add_suggestion" href="#suggestion_form">Adicione uma sugestão</a>
 
 		<%= render "suggestion_form", :event => @event, :idea => Idea.new %>
 
@@ -19,7 +19,7 @@
 		<% @event.ideas.each do |idea| %>
 		<div id="<%=dom_id(idea)%>" class="suggestion_box">
 			<%= image_tag "avatar.jpg" %>
-			<p><strong>Fulano de tal</strong> sugeriu:<br/><%= link_to idea.name, idea.link, :target => "_blank" %></p>
+			<p><strong>Fulano de tal</strong> sugeriu:<br/><%= link_to_if_present idea.link, idea.name, :target => "_blank" %></p>
 			<div class="clear"></div>
 		</div>
 		<% end %>	
@@ -28,7 +28,6 @@
 	
 	<div id="share">
 		<h2>Compartilhe:</h2>
-		
 		<div id="social_networks">
 				<!-- AddThis Button BEGIN -->
 				<div class="addthis_toolbox addthis_default_style ">

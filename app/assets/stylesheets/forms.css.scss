@@ -1,3 +1,5 @@
+@import "mixins";
+
 form.gift_form {
 	margin-bottom: 50px;
 }
@@ -33,14 +35,52 @@ div.field_container {
 }
 
 input#submit_form {
+	@include red_submit_button;
 	float: right;
-	cursor: pointer;
-	text-shadow: 1px 1px 1px black;
 	margin-top: 20px;
-	background: #b31414 image-url("bg_submit_button.jpg") repeat-x top center;
-	font-size: 20px;
-	color: white;
-	border: 1px solid #a93d3a;
-	border-radius: 10px;
-	padding: 15px 55px;
+	
+}
+
+div#suggestion_form {
+	padding: 10px;
+	background-color: #96b12e;
+	
+	h2 {
+		margin-bottom: 10px;
+		font-size: 26px;
+		color: #4c5b0d;
+		text-shadow: 2px 2px 1px #b6d248;
+	}
+	
+	form {
+		label {
+			font-size: 18px;
+			color: #3d4b05;
+		}
+		
+		label, input {
+			float: left;
+			clear: both;
+		}
+		
+		label {
+			margin-top: 10px;
+			margin-bottom: 10px;
+		}
+		
+		input.break_input {
+			width: 375px;
+			border: 0px;
+			outline: none;
+			font-size: 18px;
+			padding: 10px 5px;
+		}
+		
+		input#submit_suggestion {
+			@include red_submit_button;
+			display: block;
+			margin: 20px auto 10px auto;
+		}
+
+	}
 }

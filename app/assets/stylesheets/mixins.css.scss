@@ -3,3 +3,20 @@
 	border: 1px solid #b6a256;
 	border-radius: 10px;
 }
+
+@mixin red_button_text  {
+	text-shadow: 1px 1px 1px black;
+	font-size: 20px;
+	color: white;
+	font-family: Helvetica;
+	font-weight: bold;
+}
+
+@mixin red_submit_button {
+	@include red_button_text;
+	cursor: pointer;	
+	background: #b31414 image-url("bg_submit_button.jpg") repeat-x top center;
+	border: 1px solid #a93d3a;
+	border-radius: 10px;
+	padding: 15px 55px;
+}

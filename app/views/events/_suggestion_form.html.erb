@@ -1,13 +1,17 @@
 <div style="display:none;">
-	<%= form_for [event, idea], :url => event_ideas_path, :html => {:id => "suggestion-form"} do |f| %>
-		<h3>Adicionar uma sugestão</h3>
+	<div id="suggestion_form">
+		<%= form_for [event, idea], :url => event_ideas_path do |f| %>
+			<h2>Adicionar uma sugestão</h2>
 		
-		<%= f.label :name, "Qual o presente sugerido?" %>
-		<%= f.text_field :name %><br/>
+			<%= f.label :name, "Qual o presente sugerido?" %>
+			<%= f.text_field :name, :class => "break_input" %><br/>
 		
-		<%= f.label :link, "Você possui o link de uma loja onde o produto se encontra?" %>
-		<%= f.text_field :link %><br/>
+			<%= f.label :link, "Você possui o link de uma loja onde o produto se encontra?" %>
+			<%= f.text_field :link, :class => "break_input"  %><br/>
 		
-		<%= f.submit "Compartilhar sugestão" %>
-	<% end %>
+			<%= f.submit "Compartilhar sugestão", :id => "submit_suggestion" %>
+			
+			<div class="clear"></div>
+		<% end %>
+	</div>
 </div>
