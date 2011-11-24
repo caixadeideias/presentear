@@ -15,7 +15,6 @@
 
 		<%= render "suggestion_form", :event => @event, :idea => Idea.new %>
 
-
 		<% @event.ideas.each do |idea| %>
 		<div id="<%=dom_id(idea)%>" class="suggestion_box">
 			<%= image_tag "avatar.jpg" %>

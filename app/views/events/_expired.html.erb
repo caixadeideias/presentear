@@ -1,1 +1,4 @@
-EVENTO EXPIRADO.
+<div id="gift_message">
+	<p>Oops! Tarde demais. <strong><%= @event.gifted %> teve sua <%= @event.event_type %> <%= time_ago_in_words(@event.limit_date) %> atrás</strong>. </p>
+	<p>A essa altura todos os presentes já foram distribuídos :)</p>
+</div>
