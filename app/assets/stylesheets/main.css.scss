@@ -63,8 +63,8 @@ div#about {
 div#gift {
 	position: relative;
 	border-radius: 10px;
-	background-color: #8eb150;
-	opacity: 0.7;
+	background-color: rgb(142,177,80); //#8eb150
+	background-color: rgba(142,177,80, 0.7);
 	padding: 10px 10px 10px 40px;
 	border: 1px solid #3d580e;
 	line-height: 30px;

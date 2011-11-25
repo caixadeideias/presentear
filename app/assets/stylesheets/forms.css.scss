@@ -1,5 +1,13 @@
 @import "mixins";
 
+div#ui-datepicker-div {
+	font-size: 14px;
+	margin-top: -15px;
+	margin-left: -20px;
+	width: 250px;
+	padding: 0px 4px;
+}
+
 form.gift_form {
 	margin-bottom: 50px;
 }
@@ -15,15 +23,15 @@ div#gift input {
 }
 
 div#gift input#person_input {
-	background: transparent image-url("icon_person.png") no-repeat center left;
+	background: #FFF image-url("icon_person.png") no-repeat center left;
 }
 
 div#gift input#calendar_input {
-	background: transparent image-url("icon_calendar.png") no-repeat center left;
+	background: #FFF image-url("icon_calendar.png") no-repeat center left;
 }
 
 div#gift input#event_input {
-	background: transparent image-url("icon_event_type.png") no-repeat center left;
+	background: #FFF image-url("icon_event_type.png") no-repeat center left;
 }
 
 div.field_container {

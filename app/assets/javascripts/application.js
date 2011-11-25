@@ -13,4 +13,11 @@
 $(document).ready(function() {
 	
 	$("a#add_suggestion").fancybox();
+	
+	$.datepicker.setDefaults( $.datepicker.regional[ "pt-BR" ] );
+	//dateFormat: 'dd/mm/yyyy'
+	$(".datepicker").datepicker({ minDate: 0, maxDate: "+10M" });
+	
+	$('input[placeholder], textarea[placeholder]').placeholder();
+	
 });
