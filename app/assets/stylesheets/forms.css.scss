@@ -8,6 +8,27 @@ div#ui-datepicker-div {
 	padding: 0px 4px;
 }
 
+span#event_helper {
+	position: absolute;
+	top: -42px;
+	left: 30px;
+	width: 200px;
+	background-color: #eadda3;
+	border: 1px solid #b6a256;
+	border-radius: 10px;
+	text-align: center;
+	font-size: 14px;
+	font-weight: bold;
+	font-family: Helvetica;
+	color: #978232;
+	
+	img {
+		position: absolute;
+		bottom: -10px;
+		left: 90px;
+	}
+}
+
 form.gift_form {
 	margin-bottom: 50px;
 }
@@ -35,6 +56,7 @@ div#gift input#event_input {
 }
 
 div.field_container {
+	position: relative;
 	float: left;
 	width: 260px;
 	background-color: white;
