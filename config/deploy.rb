@@ -25,11 +25,11 @@ role :db,  domain_name, :primary => true         # This is where Rails migration
 
 # HOOKS
 
-# after 'deploy:update_code' do
-#   run "cd #{release_path}; RAILS_ENV=production rake assets:precompile"
-# end
+after 'deploy:update_code' do
+  run "cd #{release_path}; RAILS_ENV=production bundle exec rake assets:precompile"
+end
 
-before "deploy:assets:precompile", "bundle:install"
+# before "deploy:assets:precompile", "bundle:install"
 
 # TASKS
 
