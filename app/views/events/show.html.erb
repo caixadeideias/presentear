@@ -1,4 +1,4 @@
-<%= content_for :title, "Presentear - Sugestões de presente para #{@event.event_type} de #{@event.gifted}"  %>
+<%= content_for :title, "Presentear.me - Sugira ideias de presente para #{@event.event_type} de #{@event.gifted}"  %>
 
 <div id="gift_message">
 	<p>Colabore com idéias de presente para <strong><%= @event.event_type %></strong> de <strong><%= @event.gifted %></strong>, que irá ocorrer <strong><%= show_dates_distance_with_today(@event.limit_date) %></strong>.</p>
@@ -39,7 +39,7 @@
 				<!-- AddThis Button END -->
 		</div>
 		
-		<p>Ou compartilhe diretamente o seguinte link com seus amigos: <br/> <a href="#">http://presente.ar/fulano-de-tal</a></p>
+		<p>Ou compartilhe diretamente o seguinte link com seus amigos: <br/> <%= link_to "http://presentear.me/#{@event.token}", "http://presentear.me/#{@event.token}", :target => "_blank" %></p>
 	</div>
 	
 	<div class="clear"></div>	
