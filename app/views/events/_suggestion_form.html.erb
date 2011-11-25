@@ -3,11 +3,11 @@
 		<%= form_for [event, idea], :url => event_ideas_path do |f| %>
 			<h2>Adicionar uma sugestão</h2>
 			
-			<%= f.label :name, "Qual o presente sugerido?" %>
-			<%= f.text_field :name, :class => "break_input" %><br/>
+			<%= f.label :name, "Qual o presente sugerido? (obrigatório)" %>
+			<%= f.text_field :name, :class => "break_input", :placeholder => "Ex: Relógio Rolex" %><br/>
 		
 			<%= f.label :link, "Você possui o link de uma loja onde o produto se encontra?" %>
-			<%= f.text_field :link, :class => "break_input"  %><br/>
+			<%= f.text_field :link, :class => "break_input", :placeholder => "Ex: www.loja.com.br/produto/rolex"  %><br/>
 		
 			<%= f.submit "Compartilhar sugestão", :id => "submit_suggestion" %>
 			
