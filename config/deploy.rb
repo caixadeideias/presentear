@@ -29,7 +29,7 @@ role :db,  domain_name, :primary => true         # This is where Rails migration
 #   run "cd #{release_path}; RAILS_ENV=production bundle exec rake assets:precompile"
 # end
 
-# before "deploy:assets:precompile", "bundle:install"
+before "deploy:assets:precompile", "bundle:install"
 
 # TASKS
 
