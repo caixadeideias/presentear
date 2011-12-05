@@ -7,8 +7,8 @@ Funcionalidade: Enviar sugestão de presente
   
 	Cenário: Amigo compartilha sugestão
 		Dado que eu estou na página do evento do Joãozinho
-		E eu clico "Enviar sugestão"
-		E eu preencho "Qual o presente sugerido?" com "Bola de futebol"
+		E eu clico "Adicione uma sugestão"
+		E eu preencho "Qual o presente sugerido? (obrigatório)" com "Bola de futebol"
 		E eu preencho "Você possui o link de uma loja onde o produto se encontra?" com "http://www.submarino.com.br"
 		Quando eu aperto "Compartilhar sugestão"
 		Então eu devo ver "Bola de futebol"
