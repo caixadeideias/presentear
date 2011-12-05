@@ -15,7 +15,7 @@
 
 	<div id="gift">
 		<div class="field_container">
-			<%= f.text_field :gifted, :id => "person_input", :placeholder => "Nome do presenteado" %>
+			<%= f.text_field :gifted, :id => "person_input", :"data-placeholder" => "Nome do presenteado" %>
 		</div>
 		
 		<div class="field_container">
@@ -23,11 +23,11 @@
 				Ex: festa de aniversário
 				<%= image_tag "bottom_arrow.png" %>
 			</span>
-			<%= f.text_field :event_type, :id => "event_input", :placeholder => "Tipo de evento" %>
+			<%= f.text_field :event_type, :id => "event_input", :"data-placeholder" => "Tipo de evento" %>
 		</div>
 		
 		<div class="field_container">
-			<%= f.text_field :limit_date, :id => "calendar_input", :placeholder => "Data do evento", :class => "datepicker" %>
+			<%= f.text_field :limit_date, :id => "calendar_input", :class => "datepicker", :"data-placeholder" => "Data do evento" %>
 		</div>
 			
 		<div class="clear"></div>
