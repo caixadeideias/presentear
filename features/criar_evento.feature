@@ -8,11 +8,8 @@ Funcionalidade: Criar evento
   Cenário: Amigo cria evento
     Dado que eu estou na página inicial
     E eu preencho nome com "Joãozinho"
-    E eu seleciono "festa de aniversário" como tipo 
-    E eu preencho data com "2011-11-10"
-    Quando eu aperto "Criar"
+    E eu preencho "festa de aniversário" como tipo 
+    E eu preencho a data como sendo amanhã
+    Quando eu aperto "Continuar"
 		Então eu devo ver "Joãozinho"
-		E eu devo ver "idéias de presente para festa de aniversário de Joãozinho"
-		
-		
-    
+		E eu devo ver "Colabore com idéias de presente para festa de aniversário de Joãozinho"
