@@ -4,7 +4,9 @@
 	<title><%= yield :title %></title>
   <%= stylesheet_link_tag    "application" %>
   <%= javascript_include_tag "application" %>
+	<meta property="og:image" content="<%= image_url("logo.png") %>" />
   <%= csrf_meta_tags %>
+
 </head>
 <body>
 
