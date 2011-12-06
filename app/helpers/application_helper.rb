@@ -9,4 +9,8 @@ module ApplicationHelper
       name
     end
   end
+  
+  def image_url(image)
+    "#{request.protocol}#{request.host_with_port}#{asset_path(image)}"
+  end
 end
