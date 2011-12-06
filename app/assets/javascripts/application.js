@@ -29,30 +29,6 @@ $(document).ready(function() {
 			$("span#event_helper").fadeOut();
 		})	
 		
-	//Simulate placeholder behavior -> Was buggy to set text-align:center to a placeholder in Safari...
-	
-	//Prevent form from considerating the placeholder as a valid value
-	$("form#new_event").submit(function() {
-		$("input[data-placeholder]").each(function() {
-			if ($(this).val() == $(this).attr("data-placeholder")) 
-				$(this).val("")
-		})
-	})
-	
-	//Set data-placeholder as the default value
-	$("input[data-placeholder]").each(function() {
-		$(this).val($(this).attr("data-placeholder"));
-	})
-	
-	//Handle placeholder in/out
-	$("input[data-placeholder]")
-		.focus(function() {
-			if ($(this).val() === $(this).attr("data-placeholder"))
-				$(this).val("");
-		})
-		.blur(function() {
-			if ($(this).val() === "")
-				$(this).val($(this).attr("data-placeholder"));
-		})
+	$("form#new_event").emulatePlaceholder();
 	
 });
