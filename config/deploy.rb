@@ -7,7 +7,7 @@ set :domain_name, "www.presentear.me"
 
 # GIT CONFIG
 set :scm, :git
-set :repository,  "git@github.com:cxideias/presentear.git"
+set :repository,  "git@github.com:caixadeideias/presentear.git"
 set :branch, "deploy"
 set :deploy_via, :remote_cache
 
